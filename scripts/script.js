@@ -95,3 +95,92 @@ console.log(list);
 
 // todo 8
 
+const resultA = 40 && 2 || 33;
+const resultB = (4 * 2 ) && (3 * 6);
+const resultC = 0 && 2;
+
+console.log(resultA, resultB, resultC);
+//* 2  18  0 
+
+//! resultA : 2
+// идем слева направо:
+// 40 и 2 --> возвращается 2 как последное истинное
+// 2 или 33 --> возвращается снова 2, потому что при логическом или возвраается первое истинное
+
+//! resultB : 2
+// идем к скобкам, 8 и 18,
+// слева направо:
+// возвращается 18 как последное истинное
+// ответ 18
+
+//! resultС : 0
+// идем слева направо:
+// 0 и 2 --> возвращается 0 как первое ложное
+// ответ 0
+// Оператор && вернет 0 потому что это false значение и нет смысла идти и проверять дальше. Если в цепочке сравнений есть false значение оно сразу же возвращается, если все операнды будут true вернется последний.
+
+// итак:
+// && возвращает последнее истинное значение или возвращает первое ложное
+// || возвращает первое истинное значение или возвращает последнее ложное
+
+
+// todo 9
+
+// what is output
+
+for (let i = 0; i < 10; i++) {
+  setTimeout (function() {
+    // console.log(i);
+  }, 1000);
+}
+
+// let: after 1 second : 0 1 2 3 4 5 6 7 8 9
+
+// var: after 1 second : 10 10 10 10 10 10 10 10 10 10 
+
+// темы: 
+// область видимости, 
+// замыкания, 
+// разница работы переменных, 
+// вплытие переменных,
+// как работает setTimeout и асинхронный JavaScript
+
+
+// todo 10
+
+const goodAddedToChart = [
+    {
+      name: 'JavaScript',
+      price: 20
+    },
+    {
+      name: 'React',
+      price: 30
+    },
+    {
+      name: 'HTML&CSS',
+      price: 202
+    },
+]
+
+// 1
+var resultChart = 0;
+
+for (i = 0; i < goodAddedToChart.length; i++) {
+  resultChart = resultChart + goodAddedToChart[i].price
+};
+
+console.log(resultChart);
+//* 252
+
+// 2 
+
+let resultChart2 = goodAddedToChart.reduce((accumulator, {price}) => accumulator + price, 0);
+
+console.log(resultChart2);
+
+
+
+// todo 11
+
+ 
