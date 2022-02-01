@@ -41,7 +41,7 @@ for (let i = 0; i < numbers.length; i++); {
   // console.log(`The number is ${numbers[i]}`);
 }
 
-// i is not defined
+//* i is not defined
 
 //todo  5
 
@@ -100,7 +100,7 @@ const resultB = (4 * 2 ) && (3 * 6);
 const resultC = 0 && 2;
 
 console.log(resultA, resultB, resultC);
-//* 2  18  0 
+//* output: 2  18  0 
 
 //! resultA : 2
 // идем слева направо:
