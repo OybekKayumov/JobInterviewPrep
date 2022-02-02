@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 const functions = {
   add: (num1, num2) => num1 + num2,
   add2: function(num3, num4) {
@@ -10,7 +12,12 @@ const functions = {
     const user = { firstName: 'Oybek'};
     user['lastName'] = 'Kayumov';
     return user;
-  }
+  },
+  fetchUser: () => 
+    axios
+      .get('https://jsonplaceholder.typicode.com/users/2')
+      .then(response => response.data)
+      .catch(error => 'error')
 
 } 
 

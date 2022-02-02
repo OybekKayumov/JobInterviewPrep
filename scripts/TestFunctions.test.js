@@ -70,3 +70,32 @@ test('There is no I in team', () => {
 });
 
 //* Arrays
+test('Admin should be in username', () => {
+  username = ['userOne', 'guest', 'admin']
+  // username = ['userOne', 'guest'] //! error
+  expect(username).toContain('admin');
+});
+
+
+
+//* working with async data
+
+//* Promise
+// test('user fetched name should be in Ervin Howell', () => {
+//   expect.assertions(1);
+//   return functions.fetchUser().then(data => {
+//     expect(data.name).toEqual('Ervin Howell');
+//   })
+// });
+
+
+
+//* async await
+
+test('user fetched name should be in Ervin Howell', async () => {
+  expect.assertions(1);
+  const data = await functions.fetchUser();
+    expect(data.name).toEqual('Ervin Howell');
+});
+
+ 
