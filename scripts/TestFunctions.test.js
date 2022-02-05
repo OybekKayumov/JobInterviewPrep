@@ -1,5 +1,30 @@
 const functions = require('./TestFunctions');
 
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log('Database Initialized ...');
+// const closeDatabase = () => console.log('Database Closed ...');
+
+const nameCheck = () => console.log('checking name ...');
+
+describe('checking names', () => {
+  beforeEach(() => nameCheck());
+
+  test('user is Jeff', () => {
+    const user = 'Jeff';
+    expect(user).toBe('Jeff');
+  });
+  test('user is Karen', () => {
+    const user = 'Karen';
+    expect(user).toBe('Karen');
+  });
+});
+
+
 //* toBe
 test('adds 2 +1 to equal 3', () => {
   expect(functions.add(1, 2)).toBe(3);
