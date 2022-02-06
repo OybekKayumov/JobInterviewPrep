@@ -185,7 +185,7 @@ let resultChart2 = goodAddedToChart.reduce((accumulator, {price}) => accumulator
 
 for (let i = 1; i < 5; i++) {
   if (i === 3) continue;
-  // console.log(i);
+  console.log(i);
 }
 
 // A: 1 2
@@ -195,13 +195,9 @@ for (let i = 1; i < 5; i++) {
  
 // todo 12. what is the output ?
 
-const object = {
-  a: 'one',
-  b: 'two',
-  a: 'three'
-};
+const obj = { a: 'one',  b: 'two',  a: 'three' };
+console.log(obj);
 
-// console.log(object);
 
 // A: { a: "one", b: "two" }
 // B: { b: "two", a: "three" }
@@ -209,3 +205,26 @@ const object = {
 // D: SyntaxError
 
 // todo 13. what is the output ?
+
+const object1 = {
+  1: 'a',
+  2: 'b',
+  3: 'c'
+};
+
+const set = new Set([1, 2, 3, 4, 5]);
+
+console.log(object1.hasOwnProperty('1'));
+console.log(object1.hasOwnProperty(1));
+console.log(set.has('1'));
+console.log(set.has(1));
+
+// A: false true false true
+// B: false true true true
+// C: true true false true
+// D: true true true true
+
+// All object keys (excluding Symbols) are strings under the hood, even if you don't type it yourself as a string. This is why obj.hasOwnProperty('1') also returns true.
+
+// It doesnt work that way for a set. There is no '1' in our set: set.has('1') returns false. It has the numeric type 1, set.has(1) returns true.
+
