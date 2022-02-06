@@ -170,14 +170,14 @@ for (i = 0; i < goodAddedToChart.length; i++) {
   resultChart = resultChart + goodAddedToChart[i].price
 };
 
-console.log(resultChart);
+// console.log(resultChart);
 //* 252
 
 // 2 
 
 let resultChart2 = goodAddedToChart.reduce((accumulator, {price}) => accumulator + price, 0);
 
-console.log(resultChart2);
+// console.log(resultChart2);
 
 
 
@@ -185,7 +185,7 @@ console.log(resultChart2);
 
 for (let i = 1; i < 5; i++) {
   if (i === 3) continue;
-  console.log(i);
+  // console.log(i);
 }
 
 // A: 1 2
@@ -193,4 +193,19 @@ for (let i = 1; i < 5; i++) {
 // C: 1 2 4
 // D: 1 3 4
  
-// todo 12. 
+// todo 12. what is the output ?
+
+const object = {
+  a: 'one',
+  b: 'two',
+  a: 'three'
+};
+
+// console.log(object);
+
+// A: { a: "one", b: "two" }
+// B: { b: "two", a: "three" }
+// C: { a: "three", b: "two" }
+// D: SyntaxError
+
+// todo 13. what is the output ?
