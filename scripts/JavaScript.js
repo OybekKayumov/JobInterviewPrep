@@ -1,7 +1,7 @@
 //todo 1
 const result = 1_000_000 + 101
 
-console.log(result);
+// console.log(result);
 
 // output 1000101
 
@@ -47,9 +47,9 @@ for (let i = 0; i < numbers.length; i++); {
 
 const fruits = ['mango', 'apple'];
 // fruits.length = 0;
-console.log(fruits);
-console.log(fruits[0]);
-console.log(fruits[3]);
+// console.log(fruits);
+// console.log(fruits[0]);
+// console.log(fruits[3]);
 
 
 // todo 5
@@ -76,7 +76,7 @@ object.method(callBack, 1, 2);
 // todo 6
 
 const result1 = (1,5 - 1) * 2;
-console.log(result1);
+// console.log(result1);
 
 //* output: 8
 
@@ -88,7 +88,7 @@ const groceries = ['apple', null, 'milk', undefined, 'bread', ''];
 
 const list = groceries.filter(Boolean);
 
-console.log(list);
+// console.log(list);
 
 //* output: (3) ['apple', 'milk', 'bread']
 
@@ -99,7 +99,7 @@ const resultA = 40 && 2 || 33;
 const resultB = (4 * 2 ) && (3 * 6);
 const resultC = 0 && 2;
 
-console.log(resultA, resultB, resultC);
+// console.log(resultA, resultB, resultC);
 //* output: 2  18  0 
 
 //! resultA : 2
@@ -196,7 +196,7 @@ for (let i = 1; i < 5; i++) {
 // todo 12. what is the output ?
 
 const obj = { a: 'one',  b: 'two',  a: 'three' };
-console.log(obj);
+// console.log(obj);
 
 
 // A: { a: "one", b: "two" }
@@ -214,10 +214,10 @@ const object1 = {
 
 const set = new Set([1, 2, 3, 4, 5]);
 
-console.log(object1.hasOwnProperty('1'));
-console.log(object1.hasOwnProperty(1));
-console.log(set.has('1'));
-console.log(set.has(1));
+// console.log(object1.hasOwnProperty('1'));
+// console.log(object1.hasOwnProperty(1));
+// console.log(set.has('1'));
+// console.log(set.has(1));
 
 // A: false true false true
 // B: false true true true
@@ -233,7 +233,7 @@ console.log(set.has(1));
 var num = 8;
 var num = 10;
 
-console.log(num);
+// console.log(num);
 
 // A: 8
 // B: 10
@@ -243,3 +243,26 @@ console.log(num);
 //! With the var keyword, you can declare multiple variables with the same name. The variable will then hold the latest value.
 
 //! You cannot do this with let or const since they are block-scoped.
+
+// todo 15. what is the output ?
+
+function hello() {
+  console.log(name);
+  console.log(age);
+  var name = "Sarah";
+  let age = 23;
+}
+
+// hello();
+
+// A: Lydia и undefined
+// B: Lydia и ReferenceError
+// C: ReferenceError и 21
+// D: undefined и ReferenceError
+
+// Внутри функции мы сперва определяем переменную name с помощью ключевого слова var. Это означает, что переменная будет поднята (область памяти под переменную будет выделена во время фазы создания) со значением undefined по умолчанию, до тех пора пока исполнение кода не дойдет до строчки, где определяется переменная. Мы еще не определили значение name когда пытаемся вывести её в консоль, поэтому в консоли будет undefined.
+
+// Переменные, определенные с помощью let (и const), также поднимаются, но в отличие от var, не инициализируются. Доступ к ним не возможен до тех пор, пока не выполнится строка их определения (инициализации). Это называется "временная мертвая зона". Когда мы пытаемся обратиться к переменным до того момента как они определены, JavaScript выбрасывает исключение ReferenceError.
+
+// todo 16. what is the output ?
+
