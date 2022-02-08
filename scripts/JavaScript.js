@@ -312,6 +312,9 @@ console.log('shape: ', shape.perimetr());
 +true;
 !"Lydia";
 
+console.log('+true: ', +true);
+console.log('!"Lydia": ',!"Lydia");
+
 // A: 1 и false
 // B: false и NaN
 // C: false и false
