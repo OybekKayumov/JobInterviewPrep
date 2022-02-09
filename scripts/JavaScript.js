@@ -266,13 +266,13 @@ function hello() {
 
 // todo 16. what is the output ?
 
-for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i),1);
-}
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i),1);
+// }
 
-for (let i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i),1);
-}
+// for (let i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i),1);
+// }
 
 // A: 0 1 2 и 0 1 2
 // B: 0 1 2 и 3 3 3
@@ -293,8 +293,8 @@ const shape = {
   perimetr: () => 2 * Math.PI * this.radius
 };
 
-console.log('shape: ', shape.diameter());
-console.log('shape: ', shape.perimetr());
+// console.log('shape: ', shape.diameter());
+// console.log('shape: ', shape.perimetr());
 
 // A: 20 и 62.83185307179586
 // B: 20 и NaN
@@ -312,8 +312,8 @@ console.log('shape: ', shape.perimetr());
 +true;
 !"Lydia";
 
-console.log('+true: ', +true);
-console.log('!"Lydia": ',!"Lydia");
+// console.log('+true: ', +true);
+// console.log('!"Lydia": ',!"Lydia");
 
 // A: 1 и false
 // B: false и NaN
@@ -322,3 +322,23 @@ console.log('!"Lydia": ',!"Lydia");
 // Унарный плюс приводит операнд к числу. true это 1, а false это 0.
 
 // Строка 'Lydia' это "истинное" значение. На самом деле мы спрашиваем "является ли это истинное значение ложным"? Ответ: false.
+
+//todo что НЕ является валидным?
+const bird = {
+  size: 'small'
+};
+
+const mouse = {
+  name: 'Mickey',
+  small: true
+};
+
+// A: mouse.bird.size
+// B: mouse[bird.size]
+// C: mouse[bird["size"]]
+// D: Все варианты валидны
+
+// console.log(mouse.bird.size);         // TypeError -- НЕ является валидным
+// console.log(mouse[bird.size]);    //true 
+// console.log(mouse[bird["size"]]); //true
+
