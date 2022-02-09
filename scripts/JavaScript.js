@@ -323,7 +323,7 @@ const shape = {
 
 // Строка 'Lydia' это "истинное" значение. На самом деле мы спрашиваем "является ли это истинное значение ложным"? Ответ: false.
 
-//todo что НЕ является валидным?
+//todo 18. что НЕ является валидным?
 const bird = {
   size: 'small'
 };
@@ -342,3 +342,23 @@ const mouse = {
 // console.log(mouse[bird.size]);    //true 
 // console.log(mouse[bird["size"]]); //true
 
+// todo 19. what is the output ?
+
+let c = { greeting: 'Hey!' };
+let d;
+
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+
+// A: Hello
+// B: Hey!
+// C: undefined
+// D: ReferenceError
+// E: TypeError
+
+// В JavaScript все объекты являются ссылочными типами данных.
+
+// Сперва переменная c указывает на объект. Затем мы указываем переменной d ссылаться на тот же объект, что и c.
+
+// Когда ты изменяешь один объект, то изменяются значения всех ссылок, указывающих на этот объект.
