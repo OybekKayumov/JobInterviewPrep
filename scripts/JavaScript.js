@@ -409,3 +409,14 @@ class Chameleon {
 
 // todo 22. what is the output ?
 
+let greeting;
+greetign = {}; //! опечатка
+console.log(greetign);
+
+// A: {}
+// B: ReferenceError: greetign is not defined
+// C: undefined
+// Ответ: A
+// В консоли выведется объект, потому что мы только что создали пустой объект в глобальном объекте! Когда мы вместо greeting написали greetign, интерпретатор JS на самом деле выполнил global.greetign = {} (или window.greetign = {} в браузере).
+
+// Нужно использовать "use strict", чтобы избежать такого поведения. Эта запись поможет быть уверенным в том, что переменная была определена перед тем как ей присвоили значение.
