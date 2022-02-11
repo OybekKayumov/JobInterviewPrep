@@ -386,5 +386,26 @@ let c1 = 3;
 
 
 // todo 21. what is the output ?
+class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+    return this.newColor;
+  }
+
+  constructor({ newColor = "green" } = {}) {
+    this.newColor = newColor;
+  }
+}
+//! const fred = new Chameleon({ newColor: "purple" });
+//! fred.colorChange("orange");
+
+// A: orange
+// B: purple
+// C: green
+// D: TypeError
+// Ответ: D
+// Функция colorChange является статичной. Статичные методы не имеют доступа к экземплярам класса. Так как fred это экземпляр, то статичный метод там не доступен. Поэтому выбрасывается ошибка TypeError.
+
+
 // todo 22. what is the output ?
 
