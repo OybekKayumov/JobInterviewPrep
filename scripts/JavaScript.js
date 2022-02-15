@@ -440,4 +440,34 @@ bark.animal = 'dog';
 
 // todo 24. what is the output ?
 
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const member = new Person('Lydia', 'Hallie');
+Person.getfullname = function() {
+  return `${this.firstName} ${this.lastName}`;  
+}
+
+// Person.prototype.getfullname = function() {
+//   return `${this.firstName} ${this.lastName}`;  
+// }
+
+//! console.log(member.getfullname());
+
+// A: TypeError
+// B: SyntaxError
+// C: Lydia Hallie
+// D: undefined undefined
+
+// Ответ: A
+// Нельзя добавлять свойства конструктору, как обычному объекту. Если нужно добавить фичу всем объектам, то необходимо использовать прототипы. В данном случае
+
+// Person.prototype.getFullName = function () {
+//   return `${this.firstName} ${this.lastName}`;
+// }
+// сделает метод member.getFullName() рабочим. В чем тут преимущество? Предположим, что мы добавили этот метод к конструктору. Возможно, не каждому экземпляру Person нужен этот метод. Это приведет к большим потерям памяти, т.к. все экземпляры будут иметь это свойство. Напротив, если мы добавим этот метод только к прототипу, у нас будет только одно место в памяти, к которому смогут обращаться все экземпляры!
+
 // todo 25. what is the output ?
+
