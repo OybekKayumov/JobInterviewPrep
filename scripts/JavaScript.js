@@ -469,5 +469,28 @@ Person.getfullname = function() {
 // }
 // сделает метод member.getFullName() рабочим. В чем тут преимущество? Предположим, что мы добавили этот метод к конструктору. Возможно, не каждому экземпляру Person нужен этот метод. Это приведет к большим потерям памяти, т.к. все экземпляры будут иметь это свойство. Напротив, если мы добавим этот метод только к прототипу, у нас будет только одно место в памяти, к которому смогут обращаться все экземпляры!
 
-// todo 25. what is the output ?
 
+
+// todo 25. what is the output ?
+function Person1(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const lydia = new Person1('Lydia', 'Hallie');
+const sarah = Person1('Sarah', 'Smith');
+
+console.log(lydia);
+console.log(sarah);
+
+// A: Person {firstName: "Lydia", lastName: "Hallie"} и undefined
+// B: Person {firstName: "Lydia", lastName: "Hallie"} и Person {firstName: "Sarah", lastName: "Smith"}
+// C: Person {firstName: "Lydia", lastName: "Hallie"} и {}
+// D:Person {firstName: "Lydia", lastName: "Hallie"} и ReferenceError
+
+// Ответ: A
+// Для sarah мы не использовали ключевое слово new. Использование new приводит к созданию нового объекта. Но без new он указывает на глобальный объект!
+
+// Мы указали, что this.firstName равно "Sarah" и this.lastName равно "Smith". На самом деле мы определили global.firstName = 'Sarah' и global.lastName = 'Smith'. sarah осталась undefined, поскольку мы не возвращаем значение из функции Person.
+
+// todo 26. what is the output ?
