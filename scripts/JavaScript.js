@@ -183,10 +183,10 @@ let resultChart2 = goodAddedToChart.reduce((accumulator, {price}) => accumulator
 
 // todo 11. what is the output ?
 
-for (let i = 1; i < 5; i++) {
-  if (i === 3) continue;
-  console.log(i);
-}
+// for (let i = 1; i < 5; i++) {
+//   if (i === 3) continue;
+//   console.log(i);
+// }
 
 // A: 1 2
 // B: 1 2 3
@@ -246,12 +246,12 @@ var num = 10;
 
 // todo 15. what is the output ?
 
-function hello() {
-  console.log(name);
-  console.log(age);
-  var name = "Sarah";
-  let age = 23;
-}
+// function hello() {
+//   console.log(name);
+//   console.log(age);
+//   var name = "Sarah";
+//   let age = 23;
+// }
 
 // hello();
 
@@ -349,7 +349,7 @@ let d;
 
 d = c;
 c.greeting = 'Hello';
-console.log(d.greeting);
+// console.log(d.greeting);
 
 // A: Hello
 // B: Hey!
@@ -386,16 +386,16 @@ let c1 = 3;
 
 
 // todo 21. what is the output ?
-class Chameleon {
-  static colorChange(newColor) {
-    this.newColor = newColor;
-    return this.newColor;
-  }
+// class Chameleon {
+//   static colorChange(newColor) {
+//     this.newColor = newColor;
+//     return this.newColor;
+//   }
 
-  constructor({ newColor = "green" } = {}) {
-    this.newColor = newColor;
-  }
-}
+//   constructor({ newColor = "green" } = {}) {
+//     this.newColor = newColor;
+//   }
+// }
 //! const fred = new Chameleon({ newColor: "purple" });
 //! fred.colorChange("orange");
 
@@ -409,9 +409,9 @@ class Chameleon {
 
 // todo 22. what is the output ?
 
-let greeting;
-greetign = {}; //! опечатка
-console.log(greetign);
+// let greeting;
+// greetign = {}; //! опечатка
+// console.log(greetign);
 
 // A: {}
 // B: ReferenceError: greetign is not defined
@@ -422,11 +422,11 @@ console.log(greetign);
 // Нужно использовать "use strict", чтобы избежать такого поведения. Эта запись поможет быть уверенным в том, что переменная была определена перед тем как ей присвоили значение.
 
 // todo 23. what is the output ?
-function bark() {
-  console.log('Woof!');
-}
+// function bark() {
+//   console.log('Woof!');
+// }
 
-bark.animal = 'dog';
+// bark.animal = 'dog';
 
 // A: Ничего, всё в порядке!
 // B: SyntaxError. Нельзя добавлять свойства функциям таким способом.
@@ -480,8 +480,8 @@ function Person1(firstName, lastName) {
 const lydia = new Person1('Lydia', 'Hallie');
 const sarah = Person1('Sarah', 'Smith');
 
-console.log(lydia);
-console.log(sarah);
+// console.log(lydia);
+// console.log(sarah);
 
 // A: Person {firstName: "Lydia", lastName: "Hallie"} и undefined
 // B: Person {firstName: "Lydia", lastName: "Hallie"} и Person {firstName: "Sarah", lastName: "Smith"}
@@ -516,7 +516,7 @@ function sum(a, b) {
   return a + b
 }
 
-console.log(sum(1, "2"));
+// console.log(sum(1, "2"));
 
 // A: NaN
 // B: TypeError
@@ -529,10 +529,10 @@ console.log(sum(1, "2"));
 // В этом примере JavaScript сконвертировал число 1 в строку, чтобы операция внутри функции имела смысл и вернула значение. Во время сложения числа (1) и строки ('2') число преобразовывается к строке. Мы можем конкатенировать строки вот так: "Hello" + "World". Таким образом, "1" + "2" возвращает "12".
 
 // todo 29. what is the output ?
-let number = 0;
-console.log(number++);
-console.log(++number);
-console.log(number);
+// let number = 0;
+// console.log(number++);
+// console.log(++number);
+// console.log(number);
 
 // A: 1 1 2
 // B: 1 2 2
@@ -551,3 +551,21 @@ console.log(number);
 //   2 Возвращает значение (2)
 // Результат: 0 2 2.
  
+// todo 30. what is the output ?
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const person = 'Lydia';
+const age = 21;
+getPersonInfo`${person} is ${age} years old`;
+
+// A: "Lydia" 21 ["", " is ", " years old"]
+// B: ["", " is ", " years old"] "Lydia" 21
+// C: "Lydia" ["", " is ", " years old"] 21
+
+// Ответ: B
+// При использовании тегированных шаблонных литералов первым аргументом всегда будет массив строковых значений. Оставшимися аргументами будут значения переданных выражений!
+
