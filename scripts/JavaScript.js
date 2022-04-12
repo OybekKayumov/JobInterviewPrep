@@ -608,3 +608,23 @@ getAge(21);
 
 // Ответ: C
 // Оператор распространения (...args) возвращает массив с аргументами. Массив это объект, поэтому typeof args возвращает "object".
+
+// todo 33. what is the output ?
+
+function getNewAge() {
+  'use strict';
+  newAge = 21;
+  console.log(newAge);
+}
+
+getNewAge();
+
+// A: 21
+// B: undefined
+// C: ReferenceError
+// D: TypeError
+
+// Ответ: C
+// Используя "use strict", можно быть уверенным, что мы по ошибке не побъявим глобальные переменные. Мы ранее нигде не объявляли переменную age, поэтому с использованием "use strict" возникнет ReferenceError. Без использования "use strict" ошибки не возникнет, а переменная age добавится в глобальный объект.
+
+
