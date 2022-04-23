@@ -719,3 +719,19 @@ for (let i=1; i<5; i++) {
 // D: 1 3 4
 // Ответ: C
 // Оператор continue пропускает итерацию, если условие возвращает true.
+
+// todo 41. what is the output ?
+function sayHi() {
+  return (() => 0)();
+}
+
+console.log(typeof sayHi());
+
+// A: "object"
+// B: "number"
+// C: "function"
+// D: "undefined"
+// Ответ: B
+// Функция sayHi возвращает значение, возвращаемое из немедленно вызываемого функционального выражения (IIFE). Результатом является 0 типа "number".
+
+// Для информации: в JS 8 встроенных типов: null, undefined, boolean, number, string, object, symbol и bigint. "function" не является отдельным типом, т.к. функции являются объектами типа "object".
