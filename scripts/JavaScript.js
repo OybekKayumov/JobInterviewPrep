@@ -666,7 +666,7 @@ console.log(num);
 
 // Но такой трюк нельзя проделать с let и const, т.к. у них блочная область видимости.
 
-// todo 36. what is the result ?
+// todo 37. what is the result ?
 const newObject = {1: "a", 2: "b", 3: "c"};
 const newSet = new Set([1, 2, 3, 4, 5]);
 
@@ -686,3 +686,13 @@ console.log(
 
 // Но это не работает для set. Значения '1' нет в set: set.has('1') возвращает false. Но set.has(1) вернет true.
 
+// todo 38. what is the output ?
+const objectN = {a: "one", b: "two", a: "three"};
+console.log(objectN);
+
+// A: { a: "one", b: "two" }
+// B: { b: "two", a: "three" }
+// C: { a: "three", b: "two" }
+// D: SyntaxError
+// Ответ: C
+// Если есть два ключа с одинаковым именем, то ключ будет перезаписан. Его позиция сохранится, но значением будет последнее указанное.
