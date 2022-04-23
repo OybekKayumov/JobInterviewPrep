@@ -735,3 +735,12 @@ console.log(typeof sayHi());
 // Функция sayHi возвращает значение, возвращаемое из немедленно вызываемого функционального выражения (IIFE). Результатом является 0 типа "number".
 
 // Для информации: в JS 8 встроенных типов: null, undefined, boolean, number, string, object, symbol и bigint. "function" не является отдельным типом, т.к. функции являются объектами типа "object".
+
+// todo 42. what is the output ?
+console.log(typeof typeof 1);
+// A: "number"
+// B: "string"
+// C: "object"
+// D: "undefined"
+// Ответ: B
+// typeof 1 возвращает "number". typeof "number" возвращает "string"
