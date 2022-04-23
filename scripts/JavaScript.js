@@ -580,7 +580,7 @@ function checkAge(data) {
   }  
 }
 
-checkAge({ age: 18 });
+// checkAge({ age: 18 });
 
 // A: Ты взрослый!
 // B: Ты все еще взрослый.
@@ -599,7 +599,7 @@ function getAge(...args) {
   console.log(typeof args);
 }
 
-getAge(21);
+// getAge(21);
 
 // A: "number"
 // B: "array"
@@ -630,7 +630,7 @@ function getNewAge() {
 // todo 34. what is the sum ?
 const sumEval = eval("10*10+5");
 
-console.log(sumEval);
+// console.log(sumEval);
 
 // A: 105
 // B: "105"

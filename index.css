@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: lightslategrey;
+}
+
+h2 {
+  margin: 30px;
+  font-size: 3rem;
+}
