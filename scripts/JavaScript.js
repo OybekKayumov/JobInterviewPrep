@@ -640,7 +640,7 @@ const sumEval = eval("10*10+5");
 // Ответ: A
 // eval выполняет код, переданный в виде строки. Если это выражение (как в данном случае), то вычисляется выражение. Выражение 10 * 10 + 5 вернет число 105.
 
-// todo 34. how long will be enable cool_secret ?
+// todo 35. how long will be enable cool_secret ?
 sessionStorage.setItem("cool_secret", 123);
 
 // A: Всегда, данные не потеряются.
@@ -652,7 +652,7 @@ sessionStorage.setItem("cool_secret", 123);
 
 // При использовании localStorage данные сохраняются навсегда. Очистить их можно, например, используя localStorage.clear().
 
-// todo 33. what is the output ?
+// todo 36. what is the output ?
 var num = 8;
 var num = 10;
 console.log(num);
@@ -665,3 +665,24 @@ console.log(num);
 // С помощью ключевого слова var можно определять сколько угодно переменных с одним и тем же именем. Переменная будет хранить последнее присвоенное значение.
 
 // Но такой трюк нельзя проделать с let и const, т.к. у них блочная область видимости.
+
+// todo 36. what is the result ?
+const newObject = {1: "a", 2: "b", 3: "c"};
+const newSet = new Set([1, 2, 3, 4, 5]);
+
+console.log(
+  newObject.hasOwnProperty("1"), 
+  newObject.hasOwnProperty(1),
+  newSet.has("1"),
+  newSet.has(1),
+)
+
+// A: false true false true
+// B: false true true true
+// C: true true false true
+// D: true true true true
+// Ответ: C
+// Все ключи объектов (кроме Symbols) являются строками, даже если заданы не в виде строк. Поэтому obj.hasOwnProperty('1') так же возвращает true.
+
+// Но это не работает для set. Значения '1' нет в set: set.has('1') возвращает false. Но set.has(1) вернет true.
+
