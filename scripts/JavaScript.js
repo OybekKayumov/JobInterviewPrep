@@ -744,3 +744,21 @@ console.log(typeof typeof 1);
 // D: "undefined"
 // Ответ: B
 // typeof 1 возвращает "number". typeof "number" возвращает "string"
+
+// todo 43. what is the output ?
+const numbersN = [1, 2, 3];
+numbersN[10] = 11;
+console.log(numbersN);
+
+// A: [1, 2, 3, 7 x null, 11]
+// B: [1, 2, 3, 11]
+// C: [1, 2, 3, 7 x empty, 11]
+// D: SyntaxError
+
+// Ответ: C
+// Когда в массив добавляется значение, которое выходит за пределы длины массива, JavaScript создает так называемые "пустые ячейки". На самом деле они имеют значения undefined, но в консоли выводятся так:
+
+// [1, 2, 3, 7 x empty, 11]
+
+// в зависимости от окружения (может отличаться для браузеров, Node, и т.д.).
+
