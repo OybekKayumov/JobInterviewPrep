@@ -762,3 +762,29 @@ console.log(numbersN);
 
 // в зависимости от окружения (может отличаться для браузеров, Node, и т.д.).
 
+// todo 44. which are false ?
+
+// 0;
+// new Number(0);
+// ("");
+// (" ");
+// new Boolean(false);
+// undefined;
+
+// A: 0, '', undefined
+// B: 0, new Number(0), '', new Boolean(false), undefined
+// C: 0, '', new Boolean(false), undefined
+// D: Все являются "ложными"
+
+// Ответ: A
+// Есть только шесть "ложных" значений:
+
+// undefined
+// null
+// NaN
+// 0
+// '' (пустая строка)
+// false
+// Конструкторы функций, такие как new Number и new Boolean являются "истинными".
+
+
