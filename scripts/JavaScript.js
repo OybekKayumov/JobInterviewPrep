@@ -670,12 +670,12 @@ console.log(num);
 const newObject = {1: "a", 2: "b", 3: "c"};
 const newSet = new Set([1, 2, 3, 4, 5]);
 
-console.log(
-  newObject.hasOwnProperty("1"), 
-  newObject.hasOwnProperty(1),
-  newSet.has("1"),
-  newSet.has(1),
-)
+// console.log(
+//   newObject.hasOwnProperty("1"), 
+//   newObject.hasOwnProperty(1),
+//   newSet.has("1"),
+//   newSet.has(1),
+// )
 
 // A: false true false true
 // B: false true true true
@@ -688,7 +688,7 @@ console.log(
 
 // todo 38. what is the output ?
 const objectN = {a: "one", b: "two", a: "three"};
-console.log(objectN);
+// console.log(objectN);
 
 // A: { a: "one", b: "two" }
 // B: { b: "two", a: "three" }
@@ -708,10 +708,10 @@ console.log(objectN);
 // Базовый контекст исполнения это глобальный контекст исполнения: это то, что доступно где угодно в твоем коде.
 
 // todo 40. what is the output ?
-for (let i=1; i<5; i++) {
-  if (i === 3) continue;
-  console.log(i);
-}
+// for (let i=1; i<5; i++) {
+//   if (i === 3) continue;
+//   console.log(i);
+// }
 
 // A: 1 2
 // B: 1 2 3
@@ -725,7 +725,7 @@ function sayHi() {
   return (() => 0)();
 }
 
-console.log(typeof sayHi());
+// console.log(typeof sayHi());
 
 // A: "object"
 // B: "number"
@@ -737,7 +737,7 @@ console.log(typeof sayHi());
 // Для информации: в JS 8 встроенных типов: null, undefined, boolean, number, string, object, symbol и bigint. "function" не является отдельным типом, т.к. функции являются объектами типа "object".
 
 // todo 42. what is the output ?
-console.log(typeof typeof 1);
+// console.log(typeof typeof 1);
 // A: "number"
 // B: "string"
 // C: "object"
@@ -746,9 +746,9 @@ console.log(typeof typeof 1);
 // typeof 1 возвращает "number". typeof "number" возвращает "string"
 
 // todo 43. what is the output ?
-const numbersN = [1, 2, 3];
-numbersN[10] = 11;
-console.log(numbersN);
+// const numbersN = [1, 2, 3];
+// numbersN[10] = 11;
+// console.log(numbersN);
 
 // A: [1, 2, 3, 7 x null, 11]
 // B: [1, 2, 3, 11]
@@ -787,4 +787,23 @@ console.log(numbersN);
 // false
 // Конструкторы функций, такие как new Number и new Boolean являются "истинными".
 
+// todo 45. what is the output ?
+const personL = { name: "Lydia" };
+
+function sayHi(age) {
+  console.log(`${this.name} is ${age}`);
+}
+
+sayHi.call(personL, 21);
+sayHi.bind(personL, 21);
+
+// A: undefined is 21 Lydia is 21
+// B: function function
+// C: Lydia is 21 Lydia is 21
+// D: Lydia is 21 function
+
+// Ответ: D
+// В обоих случаях мы передаем объект, на который будет указывать this. Но .call выполняется сразу же!
+
+// .bind возвращает копию функции, но с привязанным контекстом. Она не выполняется незамедлительно.
 
