@@ -867,11 +867,11 @@ sayHi.bind(personL, 21);
 
 // todo 48.  What is the result?
 
-console.log(
+// console.log(
   !!null,
   !!"",
   !!1,
-);
+// );
 
 // A: false true false
 // B: false false true
@@ -884,3 +884,13 @@ console.log(
 
 // 1 - "истинный". !1 возвращает false. !false возвращает true.
 
+// todo 49.  setInterval
+setInterval(() => console.log('Hi'), 1000)
+
+// A: уникальный id
+// B: указанное количество миллисекунд
+// C: переданную функцию
+// D: undefined
+
+// Ответ: A
+// Это метод возвращает уникальный id. Этот id может быть использован для очищения интервала с помощью функции clearInterval().
