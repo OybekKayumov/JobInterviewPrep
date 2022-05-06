@@ -912,8 +912,8 @@ function* generator(i) {
 }
 
 const gen = generator(10);
-console.log(gen.next().value);
-console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
 
 // A: [0, 10], [10, 20]
 // B: 20, 20
@@ -928,16 +928,16 @@ console.log(gen.next().value);
 // Затем мы снова вызываем функцию с помощью метода next (). Она запускается с того места, где остановилась ранее, все еще с i, равным 10. Теперь он встречает следующее ключевое слово yield и возвращает i * 2. i равно 10, поэтому он возвращает 10 * 2, то есть 20. Это приводит к 10, 20.
 
 // todo 52.  What is the result?
-const firstPromise = new Promise((res, rej) => {
-  setTimeout(res, 500, "one");
-});
+// const firstPromise = new Promise((res, rej) => {
+//   setTimeout(res, 500, "one");
+// });
 
-const secondPromise = new Promise((res, rej) => {
-  setTimeout(res, 100, "two");
-});
+// const secondPromise = new Promise((res, rej) => {
+//   setTimeout(res, 100, "two");
+// });
 
-Promise.race([firstPromise, secondPromise])
-  .then(res => console.log('res: ', res))
+// Promise.race([firstPromise, secondPromise])
+//   .then(res => console.log('res: ', res))
 
 // A: "один"
 // B: "два"
@@ -952,7 +952,7 @@ let personLyd = { name: "Lydia" };
 const members = [personLyd]
 personLyd = null;
 
-console.log(members);
+// console.log(members);
 
 // A: null
 // B: [null]
@@ -964,3 +964,20 @@ console.log(members);
 // Затем мы присваиваем переменной person значение null.
 // Мы изменили только значение переменной person, а не первый элемент в массиве, поскольку этот элемент имеет другую (скопированную) ссылку на объект. Первый элемент в members по-прежнему содержит ссылку на исходный объект. Когда мы выводим в консоль массив members, первый элемент по-прежнему содержит значение объекта, который выводится в консоль.
 
+// todo 54.  What is the result? 
+const personLydia = {
+  name: "Lydia",
+  age: 21
+};
+
+for (const item in personLydia) {
+  console.log(item);
+}
+
+// A: { name: "Lydia" }, { age: 21 }
+// B: "name", "age"
+// C: "Lydia", 21
+// D: ["name", "Lydia"], ["age", 21]
+
+// Ответ: B
+// С помощью цикла for-in мы можем перебирать ключи объекта, в данном случае name и age. Под капотом ключи объекта являются строками (если они не являются Symbol). В каждом цикле мы устанавливаем значение item равным текущему ключу, по которому он перебирается. Сначала, item равен name, и выводится в консоль. Затем item равен age, который выводится в консоль.
