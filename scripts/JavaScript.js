@@ -653,9 +653,9 @@ sessionStorage.setItem("cool_secret", 123);
 // При использовании localStorage данные сохраняются навсегда. Очистить их можно, например, используя localStorage.clear().
 
 // todo 36. what is the output ?
-var num = 8;
-var num = 10;
-console.log(num);
+// var num = 8;
+// var num = 10;
+// console.log(num);
 
 // A: 8
 // B: 10
@@ -788,14 +788,14 @@ function sayHi() {
 // Конструкторы функций, такие как new Number и new Boolean являются "истинными".
 
 // todo 45. what is the output ?
-const personL = { name: "Lydia" };
+// const personL = { name: "Lydia" };
 
-function sayHi(age) {
-  console.log(`${this.name} is ${age}`);
-}
+// function sayHi(age) {
+//   console.log(`${this.name} is ${age}`);
+// }
 
-sayHi.call(personL, 21);
-sayHi.bind(personL, 21);
+// sayHi.call(personL, 21);
+// sayHi.bind(personL, 21);
 
 // A: undefined is 21 Lydia is 21
 // B: function function
@@ -809,17 +809,17 @@ sayHi.bind(personL, 21);
 
 // todo 46. what is the output ?
 
-(() => {
-  let x, y;
-  try {
-    throw new Error();    
-  } catch (x) {
-    (x = 1), (y = 2);
-    console.log(x);
-  }
-  console.log(x);
-  console.log(y);
-})();
+// (() => {
+//   let x, y;
+//   try {
+//     throw new Error();    
+//   } catch (x) {
+//     (x = 1), (y = 2);
+//     console.log(x);
+//   }
+//   console.log(x);
+//   console.log(y);
+// })();
 
 // A: 1 undefined 2
 // B: undefined undefined undefined
@@ -867,11 +867,11 @@ sayHi.bind(personL, 21);
 
 // todo 48.  What is the result?
 
-console.log(
-  !!null,
-  !!"",
-  !!1,
-);
+// console.log(
+//   !!null,
+//   !!"",
+//   !!1,
+// );
 
 // A: false true false
 // B: false false true
@@ -896,7 +896,7 @@ console.log(
 // Это метод возвращает уникальный id. Этот id может быть использован для очищения интервала с помощью функции clearInterval().
 
 // todo 50.  What is the result?
-console.log( [..."Lydia"] );
+// console.log( [..."Lydia"] );
 
 // A: ["L", "y", "d", "i", "a"]
 // B: ["Lydia"]
@@ -965,14 +965,14 @@ personLyd = null;
 // Мы изменили только значение переменной person, а не первый элемент в массиве, поскольку этот элемент имеет другую (скопированную) ссылку на объект. Первый элемент в members по-прежнему содержит ссылку на исходный объект. Когда мы выводим в консоль массив members, первый элемент по-прежнему содержит значение объекта, который выводится в консоль.
 
 // todo 54.  What is the result? 
-const personLydia = {
-  name: "Lydia",
-  age: 21
-};
+// const personLydia = {
+//   name: "Lydia",
+//   age: 21
+// };
 
-for (const item in personLydia) {
-  console.log(item);
-}
+// for (const item in personLydia) {
+//   console.log(item);
+// }
 
 // A: { name: "Lydia" }, { age: 21 }
 // B: "name", "age"
@@ -983,7 +983,7 @@ for (const item in personLydia) {
 // С помощью цикла for-in мы можем перебирать ключи объекта, в данном случае name и age. Под капотом ключи объекта являются строками (если они не являются Symbol). В каждом цикле мы устанавливаем значение item равным текущему ключу, по которому он перебирается. Сначала, item равен name, и выводится в консоль. Затем item равен age, который выводится в консоль.
 
 // todo 55.  What is the result? 
-console.log(3 + 4 + '5');
+// console.log(3 + 4 + '5');
 
 // A: "345"
 // B: "75"
@@ -997,8 +997,8 @@ console.log(3 + 4 + '5');
 // 7 + '5' приводит к "75" из-за принуждения. JavaScript преобразует число 7 в строку. Мы можем объединить две строки, используя оператор +. "7" + "5" приводит к "75".
 
 // todo 56.  What is the num? 
-const num1 = parseInt("7*6", 10);
-console.log(num1);
+// const num1 = parseInt("7*6", 10);
+// console.log(num1);
 
 // A: 42
 // B: "42"
@@ -1010,12 +1010,12 @@ console.log(num1);
 // * не является допустимым числом. Он только разбирает "7" в десятичную 7. num теперь содержит значение 7.
 
 // todo 57.  What is the result? 
-console.log(
-[1, 2, 3].map(num => {
-  if (typeof num === "number") return;
-  return num * 2
-})
-)
+// console.log(
+// [1, 2, 3].map(num => {
+//   if (typeof num === "number") return;
+//   return num * 2
+// })
+// )
 
 // A: []
 // B: [null, null, null]
@@ -1037,7 +1037,7 @@ const p = {name: "Sarah" };
 const bYear = "1997";
 
 getInfo(p, bYear);
-console.log(p, bYear);
+// console.log(p, bYear);
 
 // A: { name: "Lydia" }, "1997"
 // B: { name: "Sarah" }, "1998"
@@ -1075,3 +1075,19 @@ HiSay();
 
 // С помощью оператора catch мы можем указать, что делать, если в блоке try выдается исключение. Исключение: строка 'Hello world'. e теперь равно той строке, которую мы записываем. Это приводит к 'Oh no an error: Hello world'.
 
+// todo 60.  What is the result?
+function Car () {
+  this.make = "lamborghini"
+
+  return { make: "Maserati"};
+}
+
+const myCar = new Car();
+console.log('myCar.make: ', myCar.make);
+
+// A: "Lamborghini"
+// B: "Maserati"
+// C: ReferenceError
+// D: TypeError
+// Ответ: B
+// Когда вы возвращаете свойство, значение свойства равно возвращаемому значению, а не значению, установленному в функции конструктора. Мы возвращаем строку "Maserati", поэтому myCar.make равно "Maserati".
