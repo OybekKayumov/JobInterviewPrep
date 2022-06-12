@@ -1117,23 +1117,23 @@ console.log(typeof y);
 // Однако мы создали глобальную переменную y, установив y равным 10. Это значение доступно в любом месте нашего кода. y определен и содержит значение типа "number". console.log(typeof y) возвращает "number".
 
 // todo 62.  What is the output?
-class Dog {
-  constructor(name) {
-    this.name = name
-  }
-}
+// class Dog {
+//   constructor(name) {
+//     this.name = name
+//   }
+// }
 
-Dog.prototype.bark = function() {
-  console.log(`Woof I am ${this.name}`);
-}
+// Dog.prototype.bark = function() {
+//   console.log(`Woof I am ${this.name}`);
+// }
 
-const pet = new Dog("Mara");
+// const pet = new Dog("Mara");
 
-pet.bark();
+// pet.bark();
 
-delete Dog.prototype.bark;
+// delete Dog.prototype.bark;
 
-pet.bark();
+// pet.bark();
 
 // A: "Woof I am Mara", TypeError
 // B: "Woof I am Mara", "Woof I am Mara"
@@ -1143,3 +1143,17 @@ pet.bark();
 // Мы можем удалить свойства из объектов, используя ключевое слово delete, также в прототипе. Удаляя свойство в прототипе, оно больше не доступно в цепочке прототипов. В этом случае функция bark больше не доступна в прототипе послеdelete Dog.prototype.bark, но мы все еще пытаемся получить к ней доступ.
 
 // Когда мы пытаемся вызвать что-то, что не является функцией, выдается TypeError. В этом случае TypeError: pet.bark не является функцией, поскольку pet.bark является undefined.
+
+// todo 63.  What is the output?
+
+const new_set = new Set([1, 1, 2, 3, 4]);
+console.log(new_set);
+
+// A: [1, 1, 2, 3, 4]
+// B: [1, 2, 3, 4]
+// C: {1, 1, 2, 3, 4}
+// D: {1, 2, 3, 4}
+// Ответ: D
+// Объект Set является коллекцией unique значений: значение может появляться только один раз в наборе.
+
+// Мы передали последовательность [1, 1, 2, 3, 4] с повторяющимся значением 1. Поскольку в наборе не может быть двух одинаковых значений, одно из них удаляется. Это приводит к {1, 2, 3, 4}.
